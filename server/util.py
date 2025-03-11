@@ -118,8 +118,7 @@ if __name__ == '__main__':
     try:
         with open('./server/artifacts/test_set.pkl', 'rb') as f:
             model = pickle.load(f)
-        print("Model loaded successfully!")
-        print(type(model))  # Should be a sklearn model like LinearRegression, RandomForest, etc.
+       
     except Exception as e:
         print("Error loading model:", e)
 
