@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Price Predictor</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Device Price Prediction</h2>
+        <form id="priceForm">
+            <label>Brand:</label>
+            <select id="brand" required>
+                <option value="" disabled selected>Loading brands...</option>
+            </select>
+
+            <label>OS:</label>
+            <input type="text" id="os" required>
+
+            <label>Screen Size (inches):</label>
+            <input type="number" id="screen_size" step="0.1" required>
+
+            <label>Rear Camera (MP):</label>
+            <input type="number" id="rear_camera_mp" step="0.1" required>
+
+            <label>Front Camera (MP):</label>
+            <input type="number" id="front_camera_mp" step="0.1" required>
+
+            <label>Internal Memory (GB):</label>
+            <input type="number" id="internal_memory" required>
+
+            <label>RAM (GB):</label>
+            <input type="number" id="ram" required>
+
+            <label>Battery (mAh):</label>
+            <input type="number" id="battery" required>
+
+            <label>Weight (grams):</label>
+            <input type="number" id="weight" step="0.1" required>
+
+            <label>Device age:</label>
+            <input type="number" id="device_age" required>
+
+            <label>Price drop:</label>
+            <input type="number" id="price_drop" required>
+
+            <label>Has 4G:</label>
+            <select id="has_4g">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label>Has 5G:</label>
+            <select id="has_5g">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
