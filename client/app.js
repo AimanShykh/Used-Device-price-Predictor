@@ -31,8 +31,9 @@ document.getElementById("priceForm").addEventListener("submit", function(event) 
     formData.append("ram", document.getElementById("ram").value);
     formData.append("battery", document.getElementById("battery").value);
     formData.append("weight", document.getElementById("weight").value);
+    formData.append("new price", document.getElementById("normalized_new_price").value);
     formData.append("device_age", document.getElementById("device_age").value);
-    formData.append("price_drop", document.getElementById("price_drop").value);
+  
     formData.append("has_4g", document.getElementById("has_4g").value);
     formData.append("has_5g", document.getElementById("has_5g").value);
 

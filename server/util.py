@@ -7,7 +7,7 @@ __brands = None
 __data_columns = None
 __model = None
 
-def get_estimated_price(brand, os, screen_size, rear_camera_mp, front_camera_mp, internal_memory, ram, battery, weight, device_age, price_drop, has_4g, has_5g):
+def get_estimated_price(brand, os, screen_size, rear_camera_mp, front_camera_mp, internal_memory, ram, battery, weight,normalized_new_price, device_age, has_4g, has_5g):
     if __model is None:
         print("Error: Model is not loaded!")
         return None
@@ -31,8 +31,8 @@ def get_estimated_price(brand, os, screen_size, rear_camera_mp, front_camera_mp,
         "ram": ram,
         "battery": battery,
         "weight": weight,
+        "new_price": normalized_new_price,
         "device_age": device_age,
-        "price_drop": price_drop,
         "4g_yes": has_4g,
         "5g_yes": has_5g
     }
@@ -135,8 +135,8 @@ if __name__ == '__main__':
         ram=6,
         battery=4500,
         weight=220,
+        normalized_new_price=1000,
         device_age=5,
-        price_drop=0.7,
         has_4g=True,
         has_5g=False
     ))

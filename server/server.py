@@ -24,15 +24,16 @@ def predict_device_price():
         ram = int(request.form['ram'])
         battery = int(request.form['battery'])
         weight = float(request.form['weight'])
+        new_price = int(request.form['normalized_new_price'])
         device_age = int(request.form['device_age'])
-        price_drop = int(request.form['price_drop'])
+       
         has_4g = bool(request.form['has_4g'])
         has_5g = bool(request.form['has_5g'])
 
         # Predict the price using util.get_estimated_price
         estimated_price = util.get_estimated_price(
             brand, os, screen_size, rear_camera_mp ,front_camera_mp, internal_memory, 
-            ram, battery, weight,device_age,price_drop, has_4g, has_5g
+            ram, battery, weight,device_age,new_price, has_4g, has_5g
         )
 
         # Returning the result as a JSON response
