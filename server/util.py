@@ -19,10 +19,10 @@ def get_estimated_price(brand, os, screen_size, rear_camera_mp, front_camera_mp,
         brand_index = -1
         os_index = -1
 
-    # Initialize feature array
+    # Initializing feature array
     x = np.zeros(len(__data_columns))
 
-    # Assign numerical values
+    # Assigning numerical values
     feature_values = {
         "screen_size": screen_size,
         "rear_camera_mp": rear_camera_mp,
@@ -41,7 +41,7 @@ def get_estimated_price(brand, os, screen_size, rear_camera_mp, front_camera_mp,
         if feature in __data_columns:
             x[__data_columns.index(feature)] = value
 
-    # Set categorical values
+    # Setting categorical values
     if brand_index >= 0:
         x[brand_index] = 1
     if os_index >= 0:
@@ -80,13 +80,13 @@ def load_saved_artifacts():
 
         __brands = [col for col in __data_columns if col.startswith("device_brand_")]
 
-        # Load model
+        # Loading model
         with open(model_path, 'rb') as f:
             loaded_data = pickle.load(f)
 
-        # If the loaded data is a tuple, extract the first element (the model)
+      
         if isinstance(loaded_data, tuple):
-            __model = loaded_data[0]  # Extract the trained model
+            __model = loaded_data[0] 
         else:
             __model = loaded_data
 
@@ -124,7 +124,7 @@ if __name__ == '__main__':
 
 
 
-    # Test the function with sample inputs
+    # Testing the function with sample inputs
     print(get_estimated_price(
         brand='device_brand_nokia',
         os='Android',  
