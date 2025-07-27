@@ -7,7 +7,7 @@ A regression-based ML project to predict the prices of used devices. The project
 ## 🚀 Features
 - Trained on a cleaned dataset of used devices
 - Multiple ML models tested (Linear, Ridge, Lasso, Random Forest.)
-- Linear Regression performed best with **XX**
+- Linear Regression performed best with R2 score **83%**
 - Flask Web App with:
   - HTML frontend
   - CSS styling using Dropzone
