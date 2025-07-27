@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import util  # Assuming this is the module with your functions
+import util  
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ def get_brand_names():
 @app.route('/predict_device_price', methods=['GET', 'POST'])
 def predict_device_price():
     try:
-        # Extracting the form data
+        # Extracting form data
         brand = request.form['brand']
         os = request.form['os']
         screen_size = float(request.form['screen_size'])
@@ -30,13 +30,13 @@ def predict_device_price():
         has_4g = bool(request.form['has_4g'])
         has_5g = bool(request.form['has_5g'])
 
-        # Predict the price using util.get_estimated_price
+     
         estimated_price = util.get_estimated_price(
             brand, os, screen_size, rear_camera_mp ,front_camera_mp, internal_memory, 
             ram, battery, weight,device_age,new_price, has_4g, has_5g
         )
 
-        # Returning the result as a JSON response
+       
         response = jsonify({
             'estimated_price': estimated_price
         })
@@ -50,5 +50,5 @@ def predict_device_price():
 
 if __name__ == "__main__":
     print("Starting Python Flask Server For Device Price Prediction...")
-    util.load_saved_artifacts()  # Load saved artifacts (model and columns)
+    util.load_saved_artifacts() 
     app.run(debug=True)
